@@ -1,21 +1,24 @@
+---	
 name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
+
+env:
+  BUILD_TYPE: Release
 
 jobs:
-    Checks:
-        runs-on: ubuntu-latest
-	timeout-minutes: 25
-        steps:
-	  -uses: actions/checkout@v3
-	  -name: Setup environment
-	   run:
-		sudo ./scripts/setupAll.sh
-	  -name: Testing
-	   run:
-		./scripts/enableTesting.sh
-	
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+  
+    - name: Setup environment
+      run: sudo ./scripts/setupAll.sh
+
+    - name: Testing
+      run: ./scripts/enableTesting.sh
