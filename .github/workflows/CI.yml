@@ -26,10 +26,10 @@ jobs:
       working-directory: scripts
       run: ./enableTesting.sh
 
-    -name: Coverage for Coveralls
+    - name: Coverage
       shell: bash
       working-directory: scripts
-      run ./coverage.sh
+      run: ./coverage.sh
       
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.0.0
