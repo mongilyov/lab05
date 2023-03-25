@@ -17,11 +17,11 @@ jobs:
     - uses: actions/checkout@v3
   
     - name: Setup environment
-      shell: bash
       working-directory: scripts
-      run: sudo setupAll.sh
+      run: ./setupAll.sh
+      shell: bash
 
     - name: Testing
       shell: bash
       working-directory: scripts
-      run: enableTesting.sh
+      run: ./enableTesting.sh
