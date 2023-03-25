@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+    Checks:
+        runs-on: ubuntu-latest
+	timeout-minutes: 25
+        steps:
+	  -uses: actions/checkout@v3
+	  -name: Setup environment
+	   run:
+		sudo ./scripts/setupAll.sh
+	  -name: Testing
+	   run:
+		./scripts/enableTesting.sh
+	
