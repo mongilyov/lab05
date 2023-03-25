@@ -4,3 +4,4 @@ sudo apt update
 sudo apt install -y cmake
 sudo apt install -y git
 sudo apt install -y libgtest-dev
+sudo apt install -y lcov
