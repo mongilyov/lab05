@@ -25,3 +25,6 @@ jobs:
       shell: bash
       working-directory: scripts
       run: ./enableTesting.sh
+
+    - name: Coveralls GitHub Action
+      uses: coverallsapp/github-action@v2.0.0
