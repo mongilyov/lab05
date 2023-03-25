@@ -8,6 +8,7 @@ TEST(Transaction, DataBase) {
 	Transaction transaction;
 	transaction.set_fee(100);
 	EXPECT_TRUE(transaction.Make(from, to, 500));
+	EXPECT_FALSE(transaction.Make(from, to, 100000));
 	EXPECT_EQ(from.GetBalance(), 400);
 	EXPECT_EQ(to.GetBalance(), 600);
 }
