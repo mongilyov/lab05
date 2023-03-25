@@ -29,8 +29,9 @@ jobs:
     - name: Coverage
       run: |
           cd build
-          lcov -d . -t bank_tests -o ./lcov.info -b . -c --no-external
-          lcov --remove ./lcov.info '*/gtest/*' '*/include/*' -o ./lcov.info
+          touch lcov.info
+          lcov -d . -t bank_tests -o lcov.info -b . -c --no-external
+          lcov --remove lcov.info '*/gtest/*' '*/include/*' -o lcov.info
       
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.0.0
