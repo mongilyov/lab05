@@ -19,7 +19,7 @@ jobs:
     - name: Setup environment
       shell: bash
       working-directory: scripts
-      run: sudo ./setupAll.sh
+      run: sudo setupAll.sh
 
     - name: Testing
       shell: bash
