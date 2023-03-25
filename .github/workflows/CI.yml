@@ -28,7 +28,7 @@ jobs:
 
     - name: Coverage
       run: |
-          lcov --capture --directory build/CMakeFiles/tests.dir/tests -o ./lcov.info
+          lcov --capture --directory . -o ./lcov.info
           lcov --remove lcov.info '*/gtest/*' '/usr/*' -o lcov.info
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.0.0
