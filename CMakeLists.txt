@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "-fprofile-arcs -ftest-coverage")
 
 project(lab05)
 
@@ -23,7 +24,3 @@ target_link_libraries(tests lab05lib GTest::gtest_main)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
-
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fprofile-arcs -ftest-coverage")
