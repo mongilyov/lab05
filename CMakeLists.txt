@@ -20,5 +20,10 @@ add_executable(tests
 	${CMAKE_CURRENT_SOURCE_DIR}/tests/accountTest.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/tests/transactionTest.cpp)
 target_link_libraries(tests lab05lib GTest::gtest_main)
+
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
+SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fprofile-arcs -ftest-coverage")
